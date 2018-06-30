@@ -72,6 +72,8 @@ app.get('/api/admin/validate/:username/:password', (req, res) => {
 //     res.send(await RedisHandler.deleteDoc());
 // });
 
-app.listen(process.env.PORT || 3005, () => {
-    console.log('Listening on ' + process.env.PORT);
+var port = process.env.PORT || 3005;
+
+app.listen(port, () => {
+    console.log(`Listening on ${ port }`);
 });

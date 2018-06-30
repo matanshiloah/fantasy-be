@@ -1,7 +1,7 @@
 const redis = require('redis');
 const { promisify } = require('util');
 
-var client = redis.createClient();
+var client = redis.createClient(process.env.REDIS_URL || null);
 var getAsync = promisify(client.get).bind(client);
 var setAsync = promisify(client.set).bind(client);
 var deleteAsync = promisify(client.del).bind(client);
